@@ -12,8 +12,8 @@ const {chromium: playwright} = require('playwright');
   let localServer;
   if(!process.env.SITE_URL){
     localServer=require('node:http').createServer(async(req,res)=>{
-      const path=new URL(req.url,'http://localhost').pathname;
-      const name=path==='/'?'index.html':path.slice(1);
+      const pathname=new URL(req.url,'http://localhost').pathname;
+      const name=pathname==='/'?'index.html':pathname.slice(1);
       if(!['index.html','app.js','style.css','reuse.css'].includes(name)&&!/^fonts\/[a-z0-9.-]+$/.test(name)){res.writeHead(404);res.end();return;}
       res.setHeader('Content-Type',name.endsWith('.js')?'text/javascript':name.endsWith('.css')?'text/css':name.endsWith('.woff2')?'font/woff2':'text/html');
       res.end(await fs.readFile(path.join(projectRoot,'dist')+'/'+name));

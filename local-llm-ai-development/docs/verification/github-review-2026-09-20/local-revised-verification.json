@@ -1,0 +1,907 @@
+{
+  "url": "http://127.0.0.1:4173/",
+  "combinations": 108,
+  "distinctSizes": [
+    "0.8〜2B 級",
+    "1〜2B 級",
+    "2B 級",
+    "単体利用は対象外",
+    "2〜4B 級",
+    "7〜9B 級",
+    "4〜7B 級",
+    "4B 級"
+  ],
+  "distinctVerdicts": [
+    "短い作業に絞って、手元で試す",
+    "品質が足りない作業は、人に戻す",
+    "ローカルは小さな補助作業に絞る",
+    "品質と送信可否で、作業を分ける",
+    "応答時間を比べて、使う場所を決める",
+    "公開情報なら、導入の手間も比べる",
+    "品質優先なら、クラウドを先に比較する",
+    "最新情報の調査は、ローカル単体では難しい",
+    "外部に送らず、手元で処理する",
+    "定型処理は、ローカルから試す",
+    "手元で下処理し、難しい部分を分担する"
+  ],
+  "viewports": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "keyboard": true,
+  "details": true,
+  "submitFocus": true,
+  "errors": [],
+  "failed": [],
+  "externalRequests": [],
+  "requests": 50,
+  "results": [
+    {
+      "ram": "8",
+      "use": "writing",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "短い作業に絞って、手元で試す"
+    },
+    {
+      "ram": "8",
+      "use": "writing",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "短い作業に絞って、手元で試す"
+    },
+    {
+      "ram": "8",
+      "use": "writing",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質が足りない作業は、人に戻す"
+    },
+    {
+      "ram": "8",
+      "use": "writing",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "ローカルは小さな補助作業に絞る"
+    },
+    {
+      "ram": "8",
+      "use": "writing",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "ローカルは小さな補助作業に絞る"
+    },
+    {
+      "ram": "8",
+      "use": "writing",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質と送信可否で、作業を分ける"
+    },
+    {
+      "ram": "8",
+      "use": "writing",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "応答時間を比べて、使う場所を決める"
+    },
+    {
+      "ram": "8",
+      "use": "writing",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "公開情報なら、導入の手間も比べる"
+    },
+    {
+      "ram": "8",
+      "use": "writing",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質優先なら、クラウドを先に比較する"
+    },
+    {
+      "ram": "8",
+      "use": "summary",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "短い作業に絞って、手元で試す"
+    },
+    {
+      "ram": "8",
+      "use": "summary",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "短い作業に絞って、手元で試す"
+    },
+    {
+      "ram": "8",
+      "use": "summary",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質が足りない作業は、人に戻す"
+    },
+    {
+      "ram": "8",
+      "use": "summary",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "ローカルは小さな補助作業に絞る"
+    },
+    {
+      "ram": "8",
+      "use": "summary",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "ローカルは小さな補助作業に絞る"
+    },
+    {
+      "ram": "8",
+      "use": "summary",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質と送信可否で、作業を分ける"
+    },
+    {
+      "ram": "8",
+      "use": "summary",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "応答時間を比べて、使う場所を決める"
+    },
+    {
+      "ram": "8",
+      "use": "summary",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "公開情報なら、導入の手間も比べる"
+    },
+    {
+      "ram": "8",
+      "use": "summary",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質優先なら、クラウドを先に比較する"
+    },
+    {
+      "ram": "8",
+      "use": "extraction",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "短い作業に絞って、手元で試す"
+    },
+    {
+      "ram": "8",
+      "use": "extraction",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "短い作業に絞って、手元で試す"
+    },
+    {
+      "ram": "8",
+      "use": "extraction",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質が足りない作業は、人に戻す"
+    },
+    {
+      "ram": "8",
+      "use": "extraction",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "ローカルは小さな補助作業に絞る"
+    },
+    {
+      "ram": "8",
+      "use": "extraction",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "ローカルは小さな補助作業に絞る"
+    },
+    {
+      "ram": "8",
+      "use": "extraction",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質と送信可否で、作業を分ける"
+    },
+    {
+      "ram": "8",
+      "use": "extraction",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "応答時間を比べて、使う場所を決める"
+    },
+    {
+      "ram": "8",
+      "use": "extraction",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "公開情報なら、導入の手間も比べる"
+    },
+    {
+      "ram": "8",
+      "use": "extraction",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質優先なら、クラウドを先に比較する"
+    },
+    {
+      "ram": "8",
+      "use": "translation",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "短い作業に絞って、手元で試す"
+    },
+    {
+      "ram": "8",
+      "use": "translation",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "短い作業に絞って、手元で試す"
+    },
+    {
+      "ram": "8",
+      "use": "translation",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質が足りない作業は、人に戻す"
+    },
+    {
+      "ram": "8",
+      "use": "translation",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "ローカルは小さな補助作業に絞る"
+    },
+    {
+      "ram": "8",
+      "use": "translation",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "ローカルは小さな補助作業に絞る"
+    },
+    {
+      "ram": "8",
+      "use": "translation",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質と送信可否で、作業を分ける"
+    },
+    {
+      "ram": "8",
+      "use": "translation",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "応答時間を比べて、使う場所を決める"
+    },
+    {
+      "ram": "8",
+      "use": "translation",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "公開情報なら、導入の手間も比べる"
+    },
+    {
+      "ram": "8",
+      "use": "translation",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質優先なら、クラウドを先に比較する"
+    },
+    {
+      "ram": "8",
+      "use": "code",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "短い作業に絞って、手元で試す"
+    },
+    {
+      "ram": "8",
+      "use": "code",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "短い作業に絞って、手元で試す"
+    },
+    {
+      "ram": "8",
+      "use": "code",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質が足りない作業は、人に戻す"
+    },
+    {
+      "ram": "8",
+      "use": "code",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "ローカルは小さな補助作業に絞る"
+    },
+    {
+      "ram": "8",
+      "use": "code",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "ローカルは小さな補助作業に絞る"
+    },
+    {
+      "ram": "8",
+      "use": "code",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質と送信可否で、作業を分ける"
+    },
+    {
+      "ram": "8",
+      "use": "code",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "0.8〜2B 級",
+      "verdict": "応答時間を比べて、使う場所を決める"
+    },
+    {
+      "ram": "8",
+      "use": "code",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "1〜2B 級",
+      "verdict": "公開情報なら、導入の手間も比べる"
+    },
+    {
+      "ram": "8",
+      "use": "code",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "2B 級",
+      "verdict": "品質優先なら、クラウドを先に比較する"
+    },
+    {
+      "ram": "8",
+      "use": "research",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "8",
+      "use": "research",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "8",
+      "use": "research",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "8",
+      "use": "research",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "8",
+      "use": "research",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "8",
+      "use": "research",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "8",
+      "use": "research",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "8",
+      "use": "research",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "8",
+      "use": "research",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "16",
+      "use": "writing",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "writing",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "2〜4B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "writing",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "writing",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "定型処理は、ローカルから試す"
+    },
+    {
+      "ram": "16",
+      "use": "writing",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "2〜4B 級",
+      "verdict": "定型処理は、ローカルから試す"
+    },
+    {
+      "ram": "16",
+      "use": "writing",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "品質と送信可否で、作業を分ける"
+    },
+    {
+      "ram": "16",
+      "use": "writing",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "応答時間を比べて、使う場所を決める"
+    },
+    {
+      "ram": "16",
+      "use": "writing",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "2〜4B 級",
+      "verdict": "公開情報なら、導入の手間も比べる"
+    },
+    {
+      "ram": "16",
+      "use": "writing",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "品質優先なら、クラウドを先に比較する"
+    },
+    {
+      "ram": "16",
+      "use": "summary",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "summary",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "4〜7B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "summary",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "summary",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "手元で下処理し、難しい部分を分担する"
+    },
+    {
+      "ram": "16",
+      "use": "summary",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "4〜7B 級",
+      "verdict": "手元で下処理し、難しい部分を分担する"
+    },
+    {
+      "ram": "16",
+      "use": "summary",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "品質と送信可否で、作業を分ける"
+    },
+    {
+      "ram": "16",
+      "use": "summary",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "応答時間を比べて、使う場所を決める"
+    },
+    {
+      "ram": "16",
+      "use": "summary",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "4〜7B 級",
+      "verdict": "公開情報なら、導入の手間も比べる"
+    },
+    {
+      "ram": "16",
+      "use": "summary",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "品質優先なら、クラウドを先に比較する"
+    },
+    {
+      "ram": "16",
+      "use": "extraction",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "extraction",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "2〜4B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "extraction",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "extraction",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "定型処理は、ローカルから試す"
+    },
+    {
+      "ram": "16",
+      "use": "extraction",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "2〜4B 級",
+      "verdict": "定型処理は、ローカルから試す"
+    },
+    {
+      "ram": "16",
+      "use": "extraction",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "品質と送信可否で、作業を分ける"
+    },
+    {
+      "ram": "16",
+      "use": "extraction",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "応答時間を比べて、使う場所を決める"
+    },
+    {
+      "ram": "16",
+      "use": "extraction",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "2〜4B 級",
+      "verdict": "公開情報なら、導入の手間も比べる"
+    },
+    {
+      "ram": "16",
+      "use": "extraction",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "品質優先なら、クラウドを先に比較する"
+    },
+    {
+      "ram": "16",
+      "use": "translation",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "translation",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "4〜7B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "translation",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "translation",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "手元で下処理し、難しい部分を分担する"
+    },
+    {
+      "ram": "16",
+      "use": "translation",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "4〜7B 級",
+      "verdict": "手元で下処理し、難しい部分を分担する"
+    },
+    {
+      "ram": "16",
+      "use": "translation",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "品質と送信可否で、作業を分ける"
+    },
+    {
+      "ram": "16",
+      "use": "translation",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "2B 級",
+      "verdict": "応答時間を比べて、使う場所を決める"
+    },
+    {
+      "ram": "16",
+      "use": "translation",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "4〜7B 級",
+      "verdict": "公開情報なら、導入の手間も比べる"
+    },
+    {
+      "ram": "16",
+      "use": "translation",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "品質優先なら、クラウドを先に比較する"
+    },
+    {
+      "ram": "16",
+      "use": "code",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "4B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "code",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "4〜7B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "code",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "外部に送らず、手元で処理する"
+    },
+    {
+      "ram": "16",
+      "use": "code",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "4B 級",
+      "verdict": "手元で下処理し、難しい部分を分担する"
+    },
+    {
+      "ram": "16",
+      "use": "code",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "4〜7B 級",
+      "verdict": "手元で下処理し、難しい部分を分担する"
+    },
+    {
+      "ram": "16",
+      "use": "code",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "品質と送信可否で、作業を分ける"
+    },
+    {
+      "ram": "16",
+      "use": "code",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "4B 級",
+      "verdict": "応答時間を比べて、使う場所を決める"
+    },
+    {
+      "ram": "16",
+      "use": "code",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "4〜7B 級",
+      "verdict": "公開情報なら、導入の手間も比べる"
+    },
+    {
+      "ram": "16",
+      "use": "code",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "7〜9B 級",
+      "verdict": "品質優先なら、クラウドを先に比較する"
+    },
+    {
+      "ram": "16",
+      "use": "research",
+      "privacy": "strict",
+      "priority": "speed",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "16",
+      "use": "research",
+      "privacy": "strict",
+      "priority": "balanced",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "16",
+      "use": "research",
+      "privacy": "strict",
+      "priority": "quality",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "16",
+      "use": "research",
+      "privacy": "balanced",
+      "priority": "speed",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "16",
+      "use": "research",
+      "privacy": "balanced",
+      "priority": "balanced",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "16",
+      "use": "research",
+      "privacy": "balanced",
+      "priority": "quality",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "16",
+      "use": "research",
+      "privacy": "open",
+      "priority": "speed",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "16",
+      "use": "research",
+      "privacy": "open",
+      "priority": "balanced",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    },
+    {
+      "ram": "16",
+      "use": "research",
+      "privacy": "open",
+      "priority": "quality",
+      "size": "単体利用は対象外",
+      "verdict": "最新情報の調査は、ローカル単体では難しい"
+    }
+  ]
+}

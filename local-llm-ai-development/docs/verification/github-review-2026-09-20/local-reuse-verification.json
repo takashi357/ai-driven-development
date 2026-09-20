@@ -1,0 +1,23 @@
+{
+  "url": "http://127.0.0.1:4174/reuse.html",
+  "mode": "local",
+  "roundTrip": true,
+  "blocks": 2,
+  "distinctTasks": 4,
+  "invalidPackageCases": 5,
+  "htmlInjectionEscaped": true,
+  "staleExportDisabled": true,
+  "clear": true,
+  "unicodeLossless": true,
+  "tabsKeyboard": true,
+  "viewports": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "errors": [],
+  "networkRequests": 88,
+  "nonGetRequests": 0
+}

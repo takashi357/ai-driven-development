@@ -41,7 +41,31 @@ npm run test:offline
 
 検査対象はローカルの`dist/`に限定しています。実サイト用の認証トークンは不要です。出力先は`test-results/`で、Git管理から除外しています。
 
-掲載準備時にはソースとスクリプトの構文、およびオフラインHTMLの再生成が元の成果物と一致することを確認します。上表は元の実装での検証記録であり、移植後の検証スクリプトをあらゆる開発環境で実行したという意味ではありません。
+掲載準備時の構文確認とオフラインHTMLの再生成確認は、ブラウザー検証の再実行とは別です。上表は元の実装での記録です。今回のGitHub掲載版の再実行結果を次に示します。
+
+## GitHub掲載版の再実行（2026年9月20日）
+
+AIアシスタントが本リポジトリの`4f14253f375b0956ff5b50331777efaad990dc9d`と取得ファイルを照合して実施しました。
+
+最初の診断スクリプト実行は`TypeError: path.join is not a function`で失敗しました。テスト内のHTTPパス文字列がNode.jsの`path`モジュールと同名だったためです。変数名を`pathname`へ変更し、アプリ本体や期待値を変えずに3スクリプトを再実行しました。
+
+| スクリプト | 今回確認した結果 | 実行結果JSON |
+| --- | --- | --- |
+| `tests/diagnosis.cjs` | 成功。108条件、モデル表示8種類、作業方針11種類。代表条件の期待値、5種類の画面幅、キーボード操作、外部リクエスト0件 | [診断](verification/github-review-2026-09-20/local-revised-verification.json) |
+| `tests/handoff.cjs` | 成功。実ファイルの受け渡し、4用途、不正入力5ケース、HTMLの文字としての表示、原文保持、旧出力の無効化 | [受け渡し](verification/github-review-2026-09-20/local-reuse-verification.json) |
+| `tests/offline.cjs` | 成功。同じ受け渡し検査をネットワーク無効のブラウザーで実施。HTTP(S)リクエスト0件 | [オフライン](verification/github-review-2026-09-20/offline-reuse-verification.json) |
+
+実行環境はLinux x86_64、Node.js 24.19.0、Playwright 1.62.1、Chromium 153.0.8010.0（`@sparticuz/chromium` 153.0.0配布版）です。既設Playwrightを`NODE_PATH`、既設Chromiumを`CHROMIUM_EXECUTABLE`で指定して`npm test`を実行しました。新規環境での`npm install`とPlaywright標準Chromiumの取得手順自体は今回検証していません。
+
+JSONは今回のテスト出力で、オフライン版のローカル作業パスだけを`[local-checkout]`へ置換しています。従来の記録は上書きせず、別フォルダーに残しました。
+
+`python3 build_offline.py`による再生成も、変更前のHTMLとSHA-256が一致しました。
+
+```text
+98efca6d4f22363be6ac0e6f4efbdc92409d42d2b9859781a10833d4233488bf
+```
+
+今回の検査はローカル配信と単一HTMLを対象とし、ホスト先の再検証や実機でのLLM推論は実施していません。
 
 ## 未検証のこと
 
