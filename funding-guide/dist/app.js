@@ -39,7 +39,7 @@ function assess(p,c){
   reasons.push(p.matchNote||'自社で使う対象設備・登録ソフト等への投資を確認してください。顧客向け売上原価とは分けます。');
  }else reasons.push(p.matchNote||'実施内容・代表申請者・対象経費を公式要領で確認してください。');
  if(p.category==='training'&&!p.smeOnly){reasons.push('雇用保険、事前計画、対象職務・訓練方式を確認。研修を販売する会社ではなく、雇用主が申請します。');}
- if(c.perspective==='self'&&p.smeOnly&&!p.employmentDefinition){reasons.unshift('設立発表は親会社100％出資。最新の株主構成と親会社を含む制度上の企業規模、新設法人の必要資料を要確認です。自社受給を見込む前に確認してください。');if(state==='candidate')state='review';}
+ if(c.perspective==='self'&&p.smeOnly&&!p.employmentDefinition){reasons.unshift('最新の株主・役員構成、制度上の企業規模、必要資料を確認してください。自社受給を見込む前に確認してください。');if(state==='candidate')state='review';}
  if(['scheduled','announced'].includes(p.status)){reasons.unshift('申請受付前または公募予告です。日程・本要領を確認して準備してください。');if(state==='candidate')state='review';}
  if(p.status==='closed'){state='closed';reasons.unshift('確認日時点で当該公募は終了しています。現在申請できる金額として算入しません。');}
  if(p.status==='unverified')reasons.unshift('最新公募条件の本文未確認。金額と申請受付は窓口確認が必要です。');
@@ -49,8 +49,8 @@ function matching(c){
  return window.PROGRAMS.filter(p=>(!c.perspective||c.perspective==='all'||p.roles.includes(c.perspective))&&(c.actor==='all'||p.actors.includes(c.actor))&&(c.purpose==='all'||p.category===c.purpose)&&(!c.availability||c.availability==='all'||(c.availability==='current'&&['open','current'].includes(p.status))||(c.availability==='future'&&['scheduled','announced'].includes(p.status))||(c.availability==='closed'&&p.status==='closed'))).map(p=>({p,...assess(p,c)}));
 }
 const roleGuides={
- self:'自社の育成・採用を中心に確認。中小企業向けの投資枠は、同社の資本・従業員数・支配関係を先に照合します。画面の企業規模は検討用の仮定です。',
- customer:'受給者は顧客企業。エクサフォワード九州はAI導入・研修等の提供を検討する立場です。顧客の補助金を自社の補助収入に加算しません。',
+ self:'自社の育成・採用を中心に確認。中小企業向けの投資枠は、自社の資本・従業員数・支配関係を先に照合します。画面の企業規模は検討用の仮定です。',
+ customer:'受給者は顧客企業。自社はAI導入・研修等を提供する立場で検討します。顧客の補助金を自社の補助収入に加算しません。',
  partner:'大学・自治体等との共同事業。交付先、委託・共同研究先、費用負担を分けます。受付前・終了案件も準備先として示しています。',
  all:'収録した制度・枠を横断表示。現金補助、研究委託、返済型資金、現物支援を区別しています。'
 };
@@ -63,7 +63,7 @@ function renderPrograms(){
  $('result-count').textContent=matches.length+'制度・枠';
  const counts=matches.reduce((a,x)=>(a[x.state]++,a),{candidate:0,review:0,blocked:0,closed:0});
  $('summary').innerHTML=[['candidate','候補'],['review','要確認'],['blocked','条件不一致'],['closed','公募終了']].map(([k,l])=>`<div class="summary-item"><span>${l}</span><strong>${counts[k]}</strong></div>`).join('');
- $('program-list').innerHTML=matches.length?matches.map(({p,state,reasons})=>`<article class="program"><div class="program-top"><span class="badge">${esc(labels[p.category])} · ${p.level==='local'?'福岡市':'国'}</span><span class="badge ${state}">${esc(statusLabels[state])}</span></div><h3>${esc(p.title)}</h3><p class="program-status">${esc(({open:"受付中",current:"制度運用中・個別期限",scheduled:"公募中・申請受付前",announced:"公募予告",closed:"公募終了",unverified:"詳細未確認"})[p.status])} · ${esc(p.evidence)}</p><p class="recipient">受給・支援対象：${esc(p.recipient)}</p><p class="amount"><span>${p.cashless?'支援の内容':'金額・補助率の目安'}</span>${esc(p.shortAmount)}</p><div class="proposal"><span>同社での活用案 ／ 推定</span><p>${esc(p.proposal)}</p></div><p class="reason ${state}">${reasons.map(esc).join('<br>')}</p><details><summary>要件・申請時期・出典を見る</summary><div class="details-body"><h4>対象と条件</h4><ul>${p.conditions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><h4>金額と範囲</h4><p>${esc(p.benefitText)}</p><h4>この構想で確認する点</h4><ul>${p.exclusions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><h4>申請時期</h4><p>${esc(p.applicationTiming)}</p><h4>併用・重複</h4><p>${esc(p.combinationNote)}</p><h4>公募・受付状況</h4><p>${esc(p.openStatusText||p.openStatus)}</p><div class="source-links">${p.sourceUrls.filter(u=>/^https:\/\//.test(u)).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">公式資料${i+1} ↗</a>`).join('')}</div><p class="program-date">確認日 ${esc(p.checkedAt)}</p></div></details></article>`).join(''):'<div class="empty">この条件に一致する収録制度はありません。目的または申請主体を変更してください。</div>';
+ $('program-list').innerHTML=matches.length?matches.map(({p,state,reasons})=>`<article class="program"><div class="program-top"><span class="badge">${esc(labels[p.category])} · ${p.level==='local'?'福岡市':'国'}</span><span class="badge ${state}">${esc(statusLabels[state])}</span></div><h3>${esc(p.title)}</h3><p class="program-status">${esc(({open:"受付中",current:"制度運用中・個別期限",scheduled:"公募中・申請受付前",announced:"公募予告",closed:"公募終了",unverified:"詳細未確認"})[p.status])} · ${esc(p.evidence)}</p><p class="recipient">受給・支援対象：${esc(p.recipient)}</p><p class="amount"><span>${p.cashless?'支援の内容':'金額・補助率の目安'}</span>${esc(p.shortAmount)}</p><div class="proposal"><span>事業での活用案 ／ 推定</span><p>${esc(p.proposal)}</p></div><p class="reason ${state}">${reasons.map(esc).join('<br>')}</p><details><summary>要件・申請時期・出典を見る</summary><div class="details-body"><h4>対象と条件</h4><ul>${p.conditions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><h4>金額と範囲</h4><p>${esc(p.benefitText)}</p><h4>この構想で確認する点</h4><ul>${p.exclusions.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><h4>申請時期</h4><p>${esc(p.applicationTiming)}</p><h4>併用・重複</h4><p>${esc(p.combinationNote)}</p><h4>公募・受付状況</h4><p>${esc(p.openStatusText||p.openStatus)}</p><div class="source-links">${p.sourceUrls.filter(u=>/^https:\/\//.test(u)).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">公式資料${i+1} ↗</a>`).join('')}</div><p class="program-date">確認日 ${esc(p.checkedAt)}</p></div></details></article>`).join(''):'<div class="empty">この条件に一致する収録制度はありません。目的または申請主体を変更してください。</div>';
 }
 const calcIds=['coreCount','coreSalary','newCount','wage','calcHours','burden','otherCost','startup','revenue','grantCount'];
 function readCalc(){const c=Object.fromEntries(calcIds.map(k=>[k,$(k).value===''?NaN:Number($(k).value)]));return {...c,grant:$('grant').value,size:$('calcSize').value,criteria:$('criteria').checked,receiptYear:$('receiptYear').value};}

@@ -7,7 +7,7 @@
 | プロジェクト | できること | 開発・検証記録 |
 | --- | --- | --- |
 | [ローカルLLM活用診断・PC分担作業台](local-llm-ai-development/) | 8GB／16GB、用途、情報の扱い、速度・品質による診断。8GBで資料を準備し、16GBで使う指示文へ受け渡し | [開発記録](local-llm-ai-development/docs/DEVELOPMENT.md)・[検証記録](local-llm-ai-development/docs/VERIFICATION.md) |
-| [エクサフォワード九州向け補助金活用設計](exaforward-kyushu-funding-guide/) | 国を中心とした28制度・枠の探索、研修・投資の条件付き試算、雇用と3年間の収支比較 | [開発記録](exaforward-kyushu-funding-guide/docs/DEVELOPMENT.md)・[検証記録](exaforward-kyushu-funding-guide/docs/VERIFICATION.md)・[出典](exaforward-kyushu-funding-guide/docs/SOURCES.md) |
+| [補助金・助成金ガイド](funding-guide/) | 国を中心とした28制度・枠の探索、研修・投資の条件付き試算、雇用と3年間の収支比較 | [開発記録](funding-guide/docs/DEVELOPMENT.md)・[検証記録](funding-guide/docs/VERIFICATION.md)・[出典](funding-guide/docs/SOURCES.md) |
 
 各フォルダーのREADMEに起動方法・技術構成・検証の再現方法を記載しています。静的HTML/CSS/JavaScriptを中心とした構成で、アプリ自体にLLM APIキーやデータベースは不要です。
 
@@ -24,7 +24,7 @@
 
 情報確認基準は2026年9月20日です。補助金ツールでは実操作23項目・回帰テスト13本を確認しました。ローカルLLMについては、開発時の実操作記録と、このリポジトリ用に整理した再現スクリプトの実行状態を各文書で区別しています。
 
-この成果物は実機のLLM推論性能や、個別企業の補助金受給資格・採択を保証しません。エクサフォワード九州の公式サイトではなく、公開資料を使った独立した検討資料です。
+この成果物は実機のLLM推論性能や、個別企業の補助金受給資格・採択を保証しません。公開資料を使った独立した検討用ツールです。
 
 ## 保管と権利
 
