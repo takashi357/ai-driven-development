@@ -1,0 +1,141 @@
+{
+  "checkedAt": "2026-09-20",
+  "method": "Browser form interactions; visible DOM assertions",
+  "checks": [
+    {
+      "label": "投資の資格未確認",
+      "actual": "要件未確認",
+      "expected": "要件未確認",
+      "pass": true
+    },
+    {
+      "label": "一般型 1000万円投資",
+      "actual": "500万円",
+      "expected": "500万円",
+      "pass": true
+    },
+    {
+      "label": "一般型 4000万円投資 上限",
+      "actual": "1,500万円",
+      "expected": "1,500万円",
+      "pass": true
+    },
+    {
+      "label": "5人の上限",
+      "actual": "750万円",
+      "expected": "750万円",
+      "pass": true
+    },
+    {
+      "label": "賃上げ特例上限",
+      "actual": "1,000万円",
+      "expected": "1,000万円",
+      "pass": true
+    },
+    {
+      "label": "制度切替で資格仮定を解除",
+      "actual": "要件未確認",
+      "expected": "要件未確認",
+      "pass": true
+    },
+    {
+      "label": "通常枠150万円未満",
+      "actual": "149.9999万円",
+      "expected": "149.9999万円",
+      "pass": true
+    },
+    {
+      "label": "通常枠4プロセス",
+      "actual": "450万円",
+      "expected": "450万円",
+      "pass": true
+    },
+    {
+      "label": "実務研修10人 通学",
+      "actual": "245万円",
+      "expected": "245万円",
+      "pass": true
+    },
+    {
+      "label": "実務研修10人 eラーニング",
+      "actual": "150万円",
+      "expected": "150万円",
+      "pass": true
+    },
+    {
+      "label": "中小企業以外 eラーニング",
+      "actual": "100万円",
+      "expected": "100万円",
+      "pass": true
+    },
+    {
+      "label": "汎用AI研修の対象外",
+      "actual": "0万円",
+      "expected": "0万円",
+      "pass": true
+    },
+    {
+      "label": "10時間未満",
+      "actual": "0万円",
+      "expected": "0万円",
+      "pass": true
+    },
+    {
+      "label": "年度残額による制限",
+      "actual": "10万円",
+      "expected": "10万円",
+      "pass": true
+    },
+    {
+      "label": "顧客企業の制度数",
+      "actual": "19制度・枠",
+      "expected": "19制度・枠",
+      "pass": true
+    },
+    {
+      "label": "支配関係の除外条件で候補判定が変化",
+      "before": "候補\n5\n要確認\n3\n条件不一致\n0\n公募終了\n0",
+      "after": "候補\n0\n要確認\n0\n条件不一致\n8\n公募終了\n0",
+      "pass": true
+    },
+    {
+      "label": "共同事業の制度数",
+      "actual": "10制度・枠",
+      "expected": "10制度・枠",
+      "pass": true
+    },
+    {
+      "label": "全件表示",
+      "actual": "28制度・枠",
+      "expected": "28制度・枠",
+      "pass": true
+    },
+    {
+      "label": "現在の受付・運用のみ表示",
+      "count": 20,
+      "pass": true
+    },
+    {
+      "label": "雇用条件未確認",
+      "actual": "0万円",
+      "expected": "0万円",
+      "pass": true
+    },
+    {
+      "label": "30時間10人・条件付き120万円、入金未定は収支に不算入",
+      "amount": "120万円",
+      "receipts": "助成入金000",
+      "pass": true
+    },
+    {
+      "label": "2年目のみ入金",
+      "actual": "助成入金01200",
+      "pass": true
+    },
+    {
+      "label": "15時間で不算入に戻る",
+      "actual": "0万円",
+      "pass": true
+    }
+  ]
+}

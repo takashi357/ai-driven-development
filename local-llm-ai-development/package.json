@@ -1,0 +1,15 @@
+{
+  "name": "local-llm-ai-development",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Japanese local LLM diagnostic and PC reuse workbench: an AI-assisted development case study",
+  "scripts": {
+    "test:diagnosis": "node tests/diagnosis.cjs",
+    "test:handoff": "node tests/handoff.cjs",
+    "test:offline": "node tests/offline.cjs",
+    "test": "npm run test:diagnosis && npm run test:handoff && npm run test:offline"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

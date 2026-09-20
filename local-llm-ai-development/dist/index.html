@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="8GB・16GBのPCで、ローカルLLMに任せる作業とクラウドとの使い分けを考える日本語の診断ツール。公式資料と推定を区別して表示します。">
+  <meta name="theme-color" content="#172a28">
+  <title>LOCAL LLM GUIDE — あなたのPCで、できること。</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23172a28'/%3E%3Cpath d='M11 10v19h18v-5H16V10' fill='%23c7f275'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./fonts/fonts.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./reuse.css">
+  <script src="./app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#diagnosis">診断へ移動</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#top" aria-label="LOCAL LLM GUIDE ホーム"><span class="brand-mark" aria-hidden="true">L<span>↗</span></span><span>LOCAL LLM<span class="brand-light"> GUIDE</span></span></a>
+    <nav aria-label="ページ内メニュー"><a href="#diagnosis">活用診断</a><a href="#evidence">根拠と考え方 <span aria-hidden="true">↗</span></a></nav>
+    <span class="edition">SEPTEMBER 2026</span>
+  </header>
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> LOCAL FIRST, WHEN IT FITS.</p>
+        <h1 id="hero-title">そのPCで、<br>AIは<span class="title-accent">どこまで</span><br class="mobile-break">使える？</h1>
+        <p class="hero-lead">8GBでも、16GBでも。<br>身近な作業から、ローカルLLMの使いどころを見つけましょう。</p>
+        <div class="hero-actions"><a class="primary-button" href="#diagnosis">自分のPCで診断する <span aria-hidden="true">↗</span></a><span>4つの条件 · 約30秒</span></div>
+        <p class="hero-note">確認日：2026年9月20日 <span>／</span> 公式情報と推定を分けて表示 · 改訂版</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-heading"><span>YOUR DEVICE, YOUR POSSIBILITIES</span><span class="visual-cross">+</span></div>
+        <div class="device-board">
+          <div class="board-lines"></div><div class="chip"><span>LOCAL</span><strong>LLM</strong><span class="chip-bottom">ON YOUR PC</span></div>
+          <div class="memory memory-eight"><b>8</b><span>GB</span><i></i></div><div class="memory memory-sixteen"><b>16</b><span>GB</span><i></i></div>
+          <div class="board-label label-one"><span class="tiny-dot"></span> 書く・整える</div><div class="board-label label-two"><span class="tiny-dot"></span> 手元で処理する</div>
+        </div>
+        <div class="visual-footer"><span>小さく試す。使い分ける。</span><span>01 — 04</span></div>
+      </div>
+    </section>
+
+    <section class="diagnosis-section" id="diagnosis" aria-labelledby="diagnosis-title">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow">01 / FIND YOUR FIT</p><h2 id="diagnosis-title">あなたに合う使い方を探す</h2></div><p>選ぶたびに、右の診断結果が変わります。<br>スマートフォンでは下に表示されます。</p></div>
+        <aside class="reuse-promo" id="reuse"><div><h3>8GBで準備して、16GBで活用する。</h3><p>休眠PCを、資料の準備・AIの活用・原文照合に。受け渡しを試せる作業台を追加しました。</p></div><a href="./reuse.html">2台で分担する作業台へ →</a></aside>
+        <div class="diagnosis-grid">
+          <form id="diagnosis-form" class="settings-card">
+            <fieldset><legend><span class="step-number">01</span> PCのメモリ容量</legend><p class="field-hint">PC全体のRAMです。SSDの保存容量ではありません。</p><div class="ram-options">
+              <label class="option ram-option"><input type="radio" name="ram" value="8"><span><b>8 <small>GB</small></b><em>小さな作業から</em></span><span class="radio-mark"></span></label>
+              <label class="option ram-option"><input type="radio" name="ram" value="16" checked><span><b>16 <small>GB</small></b><em>用途を広げやすい</em></span><span class="radio-mark"></span></label>
+            </div></fieldset>
+            <fieldset><legend><span class="step-number">02</span> 主に何に使いたいですか？</legend><div class="use-options">
+              <label class="option use-option"><input type="radio" name="use" value="writing" checked><span class="use-icon" aria-hidden="true">✎</span><span>文章の下書き<small>メール・案内文</small></span><span class="radio-mark"></span></label>
+              <label class="option use-option"><input type="radio" name="use" value="summary"><span class="use-icon" aria-hidden="true">≡</span><span>文書の要約<small>メモ・議事録</small></span><span class="radio-mark"></span></label>
+              <label class="option use-option"><input type="radio" name="use" value="extraction"><span class="use-icon" aria-hidden="true">⊞</span><span>情報の整理<small>分類・項目抽出</small></span><span class="radio-mark"></span></label>
+              <label class="option use-option"><input type="radio" name="use" value="translation"><span class="use-icon" aria-hidden="true">文</span><span>翻訳・言い換え<small>短文の意味確認</small></span><span class="radio-mark"></span></label>
+              <label class="option use-option"><input type="radio" name="use" value="code"><span class="use-icon" aria-hidden="true">⌘</span><span>コードの補助<small>関数・式の説明</small></span><span class="radio-mark"></span></label>
+              <label class="option use-option"><input type="radio" name="use" value="research"><span class="use-icon" aria-hidden="true">⌕</span><span>調べもの<small>最新情報・比較</small></span><span class="radio-mark"></span></label>
+            </div></fieldset>
+            <fieldset><legend><span class="step-number">03</span> 情報の扱い方</legend><div class="privacy-options">
+              <label class="option line-option"><input type="radio" name="privacy" value="strict"><span><b>外部に送らない</b><small>個人情報・顧客情報などを扱う</small></span><span class="radio-mark"></span></label>
+              <label class="option line-option"><input type="radio" name="privacy" value="balanced" checked><span><b>内容によって使い分ける</b><small>外部送信できる情報だけクラウドへ</small></span><span class="radio-mark"></span></label>
+              <label class="option line-option"><input type="radio" name="privacy" value="open"><span><b>公開情報が中心</b><small>クラウドも積極的に使いたい</small></span><span class="radio-mark"></span></label>
+            </div></fieldset>
+            <fieldset><legend><span class="step-number">04</span> 速度と品質、どちらを優先？</legend><div class="priority-options">
+              <label class="option"><input type="radio" name="priority" value="speed"><span>速度</span></label><label class="option"><input type="radio" name="priority" value="balanced" checked><span>バランス</span></label><label class="option"><input type="radio" name="priority" value="quality"><span>品質</span></label>
+            </div><p class="field-hint">速度優先でも、応答時間はCPU・GPUによって変わります。</p></fieldset>
+            <button class="primary-button result-button" type="submit">この条件の結果を見る <span aria-hidden="true">→</span></button>
+            <p class="input-note">この診断の選択内容は、ページ内だけで処理します。<br>AIへの送信は行いません。</p>
+          </form>
+          <div class="result-column">
+            <div id="result" class="result-card" tabindex="-1" aria-labelledby="result-title"></div>
+            <p id="update-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+            <div class="assumption-note"><span class="note-symbol" aria-hidden="true">i</span><p><b>この診断の前提</b><br>一般的なPCで、1人が短いテキストを処理する場面を想定。専用GPU・空きRAM・OSは未確認です。実機ベンチマークや動作保証ではありません。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence-section wrap" id="evidence" aria-labelledby="evidence-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / EVIDENCE, NOT HYPE</p><h2 id="evidence-title">事実と、使い方の見立てを分ける。</h2></div><p>「小さいから速い」「16GBなら快適」とは断定しません。<br>判断の根拠まで確認できる診断です。</p></div>
+      <div class="evidence-grid">
+        <article class="evidence-card"><span class="tag confirmed">公式資料で確認</span><h3>メモリ容量だけでは決まらない</h3><p>LM Studioは16GB以上のRAMを推奨。8GBのMacでは、小さなモデルと控えめな文脈長を案内しています。Windows x64ではAVX2対応も必要です。</p><a href="https://lmstudio.ai/docs/app/system-requirements" target="_blank" rel="noopener noreferrer">LM Studio / 動作要件 ↗</a></article>
+        <article class="evidence-card"><span class="tag confirmed">公式資料で確認</span><h3>モデル容量 ≠ PC全体の使用量</h3><p>モデルを載せるメモリに加え、会話の保持や処理にもメモリを使います。Gemmaの公式表も、文脈用メモリ等を含まないことを明記しています。</p><a href="https://ai.google.dev/gemma/docs/core" target="_blank" rel="noopener noreferrer">Google / Gemmaのメモリ計画 ↗</a></article>
+        <article class="evidence-card"><span class="tag estimate">このサイトの推定</span><h3>8GBは小さく。16GBも段階的に。</h3><p>8GBは0.8〜2B級、16GBは2〜4B級の4bit量子化版を出発点にします。16GBで品質を優先する場合は7〜9B級も比較候補です。日本語の品質と待ち時間は、手元の文例で確認します。</p><a href="#method">診断のルールを確認する ↓</a></article>
+      </div>
+      <details class="wide-details" id="method"><summary><span>診断のルール・用語・対象範囲</span><span class="plus" aria-hidden="true">+</span></summary><div class="detail-body">
+        <p><b>推奨はすべて用途上の推定です。</b>公式のモデル仕様・動作要件を材料に、安全側に寄せた出発点を示しています。メーカーによる8GB／16GB PCの認定や、日本語業務の実測結果ではありません。</p>
+        <div class="table-scroll"><table><caption>メモリ容量と優先度による出発点</caption><thead><tr><th>PCのRAM</th><th>速度</th><th>バランス</th><th>品質</th></tr></thead><tbody><tr><th>8GB</th><td>0.8〜2B級</td><td>1〜2B級</td><td>2B級から。4B級は空きRAM次第で試験</td></tr><tr><th>16GB</th><td>2B級。コードは4B級から</td><td>定型文・分類は2〜4B級。要約・翻訳・コードは4〜7B級</td><td>7B級を含めて比較。8〜9B級は空きRAM等を確認</td></tr></tbody></table></div>
+        <p>いずれも4bit量子化版を想定。8GBでの4B級、16GBでの6〜9B級は、他アプリを閉じ、短い入力で実メモリと応答を確認する試験候補です。12B以上は、この診断の初期候補にしません。</p>
+        <p>先にローカルを使う目的と送信可否を判定し、その後にモデル候補を示します。調べものはローカル単体の対象外として、資料整理用の候補を補足します。プライバシーの条件は送信先を変えますが、必要なモデル規模と直結しません。6B級はYi-1.5-6B-Chat（日本語用途は要検証）、7B級はQwen2.5-7B-Instruct（日本語対応の公表あり）を比較例に含めます。</p><dl class="glossary"><div><dt>B（モデル規模）</dt><dd>10億パラメータを表す単位。1B＝10億。GBとは別の単位で、品質やメモリ量が単純比例するものではありません。</dd></div><div><dt>4bit量子化 / Q4</dt><dd>モデルの数値表現を軽量化する方法。容量を抑えられる一方、形式やモデルにより品質への影響が異なります。</dd></div><div><dt>文脈長 / コンテキスト</dt><dd>入力・会話履歴・出力を扱う長さ。まず2,048トークン程度から試す提案です。日本語の文字数とは一致せず、モデル公称の最大長をそのまま使えるとは限りません。</dd></div><div><dt>実効パラメータ / MoE</dt><dd>Gemma 4のE2B・E4Bの「E」は実効規模。MoEの「有効○B」も含め、総モデル容量とは異なります。この診断では単純な2B／4Bモデルと同一視しません。</dd></div></dl>
+        <p>対象は、個人利用・小規模事業者のテキスト作業です。音声の文字起こし、画像生成、複数人への同時配信、モデル学習は対象外です。スキャンPDFにはOCR等が別途必要です。最新モデルの網羅・性能順位付けは行っていません。</p>
+      </div></details>
+      <details class="wide-details" id="sources"><summary><span>確認した公式資料と、そこから言えること</span><span class="plus" aria-hidden="true">+</span></summary><div class="detail-body">
+        <p class="source-date">全資料の確認日：2026年9月20日。以後の改訂は自動反映されません。メーカー公表値は独立した実機検証とは区別しています。</p>
+        <ol class="source-list">
+          <li><a href="https://lmstudio.ai/docs/app/system-requirements" target="_blank" rel="noopener noreferrer">LM Studio — System Requirements ↗</a><p>RAMの推奨、8GB Macの条件、CPU等の要件。Windows 8GBの快適動作を保証する資料ではありません。</p></li>
+          <li><a href="https://lmstudio.ai/docs/app/offline" target="_blank" rel="noopener noreferrer">LM Studio — Offline Operation ↗</a><p>ダウンロード済みモデルによるローカル実行と文書処理。モデル取得・更新等には通信が必要です。</p></li>
+          <li><a href="https://ai.google.dev/gemma/docs/core" target="_blank" rel="noopener noreferrer">Google — Gemma 4 model overview ↗</a><p>量子化、追加の文脈用メモリ、E2B／E4BやMoEの容量の注意点。GPU／TPU向けの容量目安をPCの総RAM要件には読み替えていません。</p></li>
+          <li><a href="https://huggingface.co/Qwen/Qwen3.5-0.8B" target="_blank" rel="noopener noreferrer">Qwen — Qwen3.5-0.8B モデルカード ↗</a><p>小規模モデルの存在・仕様。公式に試作や用途特化等を想定しており、一般業務の高品質な応答を保証しません。</p></li>
+          <li><a href="https://huggingface.co/Qwen/Qwen3.5-2B" target="_blank" rel="noopener noreferrer">Qwen — Qwen3.5-2B モデルカード ↗</a><p>2Bモデルの仕様・公表評価。量子化版を手元のPCで試す候補として提示します。</p></li>
+          <li><a href="https://huggingface.co/Qwen/Qwen3.5-4B" target="_blank" rel="noopener noreferrer">Qwen — Qwen3.5-4B モデルカード ↗</a><p>4Bモデルの仕様・公表評価。日本語の個別業務での精度は、このサイトでは実測していません。</p></li>
+          <li><a href="https://huggingface.co/Qwen/Qwen3.5-9B" target="_blank" rel="noopener noreferrer">Qwen — Qwen3.5-9B モデルカード ↗</a><p>9Bモデルの仕様。16GB PCでの快適動作を示す資料ではなく、品質優先時の比較候補です。</p></li>
+          <li><a href="https://docs.ollama.com/faq" target="_blank" rel="noopener noreferrer">Ollama — FAQ ↗</a><p>ローカル専用設定、クラウド機能の無効化、文脈長と並列処理に伴うメモリ増加の説明。</p></li>
+          <li><a href="https://huggingface.co/Qwen/Qwen2.5-7B-Instruct" target="_blank" rel="noopener noreferrer">Qwen — Qwen2.5-7B-Instruct ↗</a><p>7B級のモデル仕様、日本語を含む対応言語。日本語の実務品質や他世代との優劣は未検証です。</p></li>
+          <li><a href="https://ollama.com/library/qwen2.5:7b-instruct-q4_K_M" target="_blank" rel="noopener noreferrer">Ollama — Qwen2.5 7B Q4_K_M ↗</a><p>配布容量4.7GBを確認。必要なPCメモリの総量ではありません。</p></li>
+          <li><a href="https://huggingface.co/01-ai/Yi-1.5-6B-Chat" target="_blank" rel="noopener noreferrer">01.AI — Yi-1.5-6B-Chat ↗</a><p>6B級のモデルの存在・仕様を確認。日本語の主候補とする根拠までは確認していません。</p></li>
+          <li><a href="https://ollama.com/library/yi:6b-chat-v1.5-q4_K_M" target="_blank" rel="noopener noreferrer">Ollama — Yi 1.5 6B Q4_K_M ↗</a><p>配布容量3.7GB、英語・中国語中心の説明を確認。容量だけで日本語適性は判定しません。</p></li>
+        </ol>
+      </div></details>
+      <div class="closing-note"><span class="small-logo" aria-hidden="true">↗</span><p><strong>「動く」から、「役に立つ」へ。</strong><br>まずは、普段の小さな作業を1つ。待ち時間と手直しまで含めて判断しましょう。</p></div>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><span>LOCAL LLM GUIDE <span class="footer-separator">/</span> 2026.09</span><span>一般利用者・小規模事業者のための活用診断</span><a href="#top">ページの先頭へ ↑</a></footer>
+  <noscript><div class="noscript">診断にはJavaScriptが必要です。ブラウザーでJavaScriptを有効にしてください。根拠資料はそのまま閲覧できます。</div></noscript>
+</body>
+</html>

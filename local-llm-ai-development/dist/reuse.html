@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#172a28">
+  <title>眠っているPCに、次の仕事を。— LOCAL LLM GUIDE</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./fonts/fonts.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./reuse.css">
+  <script src="./reuse.js" defer></script>
+</head>
+<body class="reuse-page">
+  <a class="skip" href="#workbench">作業画面へ移動</a>
+  <header class="site-header wrap">
+    <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">L<span>↗</span></span><span>LOCAL LLM<span class="brand-light"> GUIDE</span></span></a>
+    <nav aria-label="ページ内メニュー"><a href="./index.html#diagnosis" class="online-only">活用診断へ</a><a href="#basis">根拠と前提</a></nav>
+    <span class="edition">PC REUSE WORKBENCH</span>
+  </header>
+  <main>
+    <section class="reuse-hero wrap" aria-labelledby="reuse-title">
+      <p class="eyebrow"><span class="live-dot"></span> 8GB → 16GB / 小さく分担して、使い直す。</p>
+      <h1 id="reuse-title">眠っているPCに、<br><span class="title-accent">次の仕事</span>を。</h1>
+      <p class="reuse-lead">8GBで資料を準備。16GBでAIを活用。<br>官公庁や中小企業の、手元にある端末から始める分担作業です。</p>
+      <div class="reuse-flow" aria-label="作業の流れ">
+        <article><span class="flow-number">01</span><div><h2>8GB <small>準備する</small></h2><p>テキストを分割し、資料名と目的を付ける。LLMは不要。</p></div></article>
+        <article><span class="flow-number">02</span><div><h2>16GB <small>活用する</small></h2><p>受け取った資料から指示文を作り、別途ローカルLLMで実行。</p></div></article>
+        <article><span class="flow-number">03</span><div><h2>人 <small>照合する</small></h2><p>出典・数字・抜け漏れを原文と比較。8GB端末でも担える仕事。</p></div></article>
+      </div>
+      <p class="reuse-caption">2台のメモリを合算する仕組みではありません。1台で両方の役割を試すこともできます。役割分担はこのサイトの提案で、実機性能は未測定です。</p>
+    </section>
+
+    <section class="reuse-workspace" id="workbench" aria-labelledby="workbench-title">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow">WORKBENCH / まずは架空資料で</p><h2 id="workbench-title">資料をつなぐ、作業台。</h2></div><a class="offline-download online-only" href="./pc-reuse-offline.html" download>オフライン版を保存 ↓</a></div>
+        <p class="workbench-notice" id="connection-note">文書の処理はブラウザー内で完結し、AIやサーバーには送信しません。このWebページの取得と認証には通信が必要です。実資料は、組織で利用を認められた端末・ブラウザーで扱ってください。</p>
+        <div class="workbench-tabs" role="tablist" aria-label="端末の役割">
+          <button type="button" role="tab" id="prepare-tab" aria-selected="true" aria-controls="prepare-panel" tabindex="0"><b>8GB</b><span>資料を準備する</span></button>
+          <button type="button" role="tab" id="use-tab" aria-selected="false" aria-controls="use-panel" tabindex="-1"><b>16GB</b><span>資料を受け取る</span></button>
+        </div>
+        <div id="prepare-panel" role="tabpanel" aria-labelledby="prepare-tab">
+          <div class="workbench-grid">
+            <form id="prepare-form" class="workbench-card">
+              <div class="card-topline"><span class="tag confirmed">LLMなしで処理</span><span>準備担当のPC</span></div>
+              <h3>まず、資料を小さく整える。</h3>
+              <div class="sample-controls"><label for="sample-kind">架空のサンプル</label><div><select id="sample-kind"><option value="government">官公庁：施設利用案内</option><option value="business">中小企業：受注引き継ぎ</option></select><button type="button" class="secondary-button" id="load-sample">サンプルを入れる</button></div><small>入力欄をサンプルで置き換えます。実在の制度・企業の資料ではありません。</small></div>
+              <label class="work-label" for="source-title">資料名・出典の手がかり</label><input id="source-title" maxlength="120" required placeholder="例：受付手順メモ 第2版・3ページ">
+              <label class="work-label" for="purpose">作業の目的</label><input id="purpose" maxlength="1000" required placeholder="例：新人が確認できる短い引き継ぎメモを作る">
+              <label class="work-label" for="prep-task">16GB側で頼みたい仕事</label><select id="prep-task"><option value="summary">決定事項・未決事項を要約</option><option value="extract">日時・担当・条件を抽出</option><option value="draft">案内文の下書き</option><option value="plain">やさしい日本語に言い換え</option></select>
+              <label class="work-label" for="source-text">資料のテキスト <small id="source-count">0 / 100,000文字</small></label><textarea id="source-text" rows="10" maxlength="200000" required aria-describedby="text-help" placeholder="ここにテキストを貼り付けてください。"></textarea>
+              <p class="field-hint" id="text-help">上限10万文字。PDF・画像・OCRには未対応。原文の数字や表記は変更せずに分割します。個人情報の自動検出・匿名化は行いません。</p>
+              <label class="work-label" for="chunk-size">1ブロックの上限 <small>文字数で分割</small></label><select id="chunk-size"><option value="400">400文字 — 短く試す</option><option value="800" selected>800文字 — 出発点</option><option value="1200">1,200文字 — 少し長め</option></select>
+              <p class="field-hint">文字数はトークン数ではありません。モデルの入力上限に収まる保証はなく、長い段落は途中で分かれる場合があります。</p>
+              <button type="submit" class="primary-button full-button">分割して確認する <span aria-hidden="true">→</span></button>
+            </form>
+            <div class="workbench-card preparation-result">
+              <div class="card-topline"><span class="tag estimate">受け渡す前に確認</span><span>保存ファイルに原文を含む</span></div>
+              <h3>小分けの資料に、番号を。</h3>
+              <p class="work-subtle">資料番号を付けて、AIの回答から原文に戻りやすくします。分割箇所は内容を理解して選ぶものではありません。</p>
+              <p class="package-summary" id="prep-summary">左のサンプルを分割すると、ここに表示します。</p>
+              <div class="chunk-list" id="chunk-preview" tabindex="0" aria-label="分割した資料のプレビュー"></div>
+              <div class="work-actions"><button type="button" class="primary-button" id="export-package" disabled>受け渡しファイルを保存 ↓</button><button type="button" class="secondary-button" id="try-handoff" disabled>この画面で受け取りを試す →</button></div>
+              <p class="field-hint">保存するJSONには原文がそのまま入ります。暗号化はしていません。移動・保存・削除は組織で認められた方法で行ってください。</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="use-panel" role="tabpanel" aria-labelledby="use-tab" hidden>
+          <div class="workbench-grid">
+            <div class="workbench-card">
+              <div class="card-topline"><span class="tag confirmed">ファイルを読み込む</span><span>活用担当のPC</span></div>
+              <h3>準備済みの資料を受け取る。</h3>
+              <label for="import-package" class="work-label">8GB側で保存した受け渡しファイル</label><input type="file" id="import-package" accept=".json,application/json">
+              <p class="field-hint">この作業台で作成したJSON形式・最大1MB。選んだファイルはブラウザー内で読み込みます。</p>
+              <p class="package-summary" id="import-summary">まだ資料を読み込んでいません。</p>
+              <div id="use-controls" hidden>
+                <label class="work-label" for="use-task">今回の仕事 <small>準備時の指定から変更できます</small></label><select id="use-task"><option value="summary">決定事項・未決事項を要約</option><option value="extract">日時・担当・条件を抽出</option><option value="draft">案内文の下書き</option><option value="plain">やさしい日本語に言い換え</option></select>
+                <label class="work-label" for="block-select">処理するブロック</label><select id="block-select"></select>
+                <label class="work-label" for="received-source">このブロックの原文</label><textarea id="received-source" rows="8" readonly></textarea>
+                <p class="field-hint" id="received-purpose"></p>
+              </div>
+              <details class="reuse-details"><summary>16GBで実行するときの出発点 ／ 推定</summary><p>短い下書き・項目抽出は2〜4B級、要約・言い換えは4〜7B級のQ4を比較する出発点にします。6B／7B級も候補ですが、サイズだけで日本語品質は決まりません。CPU・GPU・空きRAM・文脈長によって待ち時間と動作可否が変わります。</p><p>まず1ブロックずつ試し、待ち時間と手直し量を記録してください。同時に複数人で使うサーバー用途は、この構成の検証範囲外です。</p><a href="./index.html#diagnosis" class="online-only">条件を変えてモデル規模を診断 →</a></details>
+            </div>
+            <div class="workbench-card">
+              <div class="card-topline"><span class="tag estimate">生成するのは指示文</span><span>AIの回答ではありません</span></div>
+              <h3>ローカルLLMに渡す指示文。</h3>
+              <p class="work-subtle" id="prompt-guidance">別途導入したローカルLLMアプリで、ローカルモデルが選ばれていることを確認して貼り付けます。このサイトはモデルの導入・推論を行いません。</p>
+              <label class="work-label" for="generated-prompt">1ブロック分の指示文</label><textarea id="generated-prompt" rows="17" readonly placeholder="資料を読み込むと指示文が表示されます。"></textarea>
+              <div class="work-actions"><button type="button" class="primary-button" id="copy-prompt" disabled>指示文をコピー</button><button type="button" class="secondary-button" id="download-prompts" disabled>全ブロックの指示文を保存 ↓</button></div>
+              <p class="field-hint">まとめて保存しても、実行は1ブロックずつ。分割すると別のブロックにある条件・例外を見落とすため、最後に全体を照合します。</p>
+            </div>
+          </div>
+          <div class="review-strip"><span class="flow-number">03</span><div><h3>最後の仕事は、人の照合。</h3><p>AIの回答にある資料番号から原文へ戻り、数字・日付・担当・条件・例外を確認します。出典のない内容は確定しません。8GB端末を照合・修正の担当にすることもできます。</p></div></div>
+        </div>
+        <div class="workbench-bottom"><p id="work-status" role="status" aria-live="polite" aria-atomic="true">サンプルから試せます。入力内容は自動保存しません。</p><button type="button" class="text-button" id="clear-work">作業内容をクリア</button></div>
+      </div>
+    </section>
+
+    <section class="wrap reuse-basis" id="basis" aria-labelledby="basis-title">
+      <div class="section-heading"><div><p class="eyebrow">EVIDENCE / 確認日 2026.09.20</p><h2 id="basis-title">再利用できるかは、端末ごとに。</h2></div></div>
+      <div class="evidence-grid">
+        <article class="evidence-card"><span class="tag confirmed">公式資料で確認</span><h3>端末を管理できることが前提</h3><p>IPAの中小企業向けガイドラインは、IT資産の管理やソフトウェアの更新を扱っています。メモリ容量に加え、OS・ブラウザーのサポートと更新状態も確認が必要です。</p><a href="https://www.ipa.go.jp/security/guide/sme/about.html" target="_blank" rel="noopener noreferrer">IPA / 対策ガイドライン 第4.0版 ↗</a></article>
+        <article class="evidence-card"><span class="tag confirmed">公式資料で確認</span><h3>取得後はオフライン実行も可能</h3><p>LM Studioは取得済みモデルでのチャット等をオフラインで利用できます。モデルの取得や更新には通信が必要です。組織で認められた導入・更新手順に従います。</p><a href="https://lmstudio.ai/docs/app/offline" target="_blank" rel="noopener noreferrer">LM Studio / オフライン動作 ↗</a></article>
+        <article class="evidence-card"><span class="tag estimate">このサイトの提案</span><h3>8GBの仕事を、推論以外にも</h3><p>資料の準備や原文照合を分担し、16GB側で推論を試す構成です。実際の8GB／16GB端末での性能や費用対効果は未測定。端末の状態・作業量・管理の手間を含めて判断します。</p><a href="#workbench">架空資料で分担を試す ↑</a></article>
+      </div>
+      <p class="reuse-caption">官公庁・中小企業とも、再利用する端末、扱える情報、利用するモデル、ファイル移動の方法は所属組織の運用ルールを優先してください。オフライン動作は、利用許可や安全性の認証を意味しません。</p>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><span>LOCAL LLM GUIDE / PC REUSE</span><span>準備する。活用する。人が確かめる。</span><a href="#reuse-title">先頭へ ↑</a></footer>
+  <noscript><div class="noscript">資料の分割・読み込みにはJavaScriptが必要です。</div></noscript>
+</body>
+</html>

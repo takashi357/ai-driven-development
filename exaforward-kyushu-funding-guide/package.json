@@ -1,0 +1,13 @@
+{
+  "name": "exaforward-kyushu-funding-guide",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}

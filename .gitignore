@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+.openai/
+.env
+.env.*
+*.tar.gz
+.DS_Store
