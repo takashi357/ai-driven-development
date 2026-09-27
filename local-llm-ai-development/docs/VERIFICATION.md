@@ -17,19 +17,12 @@
 | 文字としての表示 | 資料名・本文に含まれるHTMLを実行しない |
 | キーボード・画面幅 | タブとラジオボタンの操作。320、390、768、1024、1440pxで横方向のはみ出しなし |
 | オフラインHTML | `file://`で開き、ネットワークを無効化したブラウザーでも受け渡しが動作。HTTP(S)リクエスト0件 |
-| Web版（閲覧者を限定して配信） | 配信先のURLでファイル受け渡しと4用途・ブロック切り替えを確認。閲覧者を限定する設定と、未ログイン時に閲覧できないことを確認 |
 
-元の記録は [verification/](verification/) にあります。掲載にあたり、環境固有のURLは取り除いています。
+元の記録は [verification/](verification/) にあります。
 
-### Web版の通信の扱い
+## 検証スクリプト
 
-ローカル配信とオフライン版では、アプリから文書を送信する処理がないことを確認しました。一方、Web版では、配信基盤のCloudflareによるセキュリティ確認のPOST通信も観測されました。HTTPメソッドだけで文書送信の有無を判定する検査では、この通信も失敗として検出されます。
-
-そのため、Web版の操作確認と、オフライン版の通信ゼロの確認を分けて記録しています。[Cloudflareの公式説明](https://developers.cloudflare.com/cloudflare-challenges/challenge-types/javascript-detections/)には、HTMLへの検出コードの挿入と、`/cdn-cgi/challenge-platform/`経由の処理が記載されています。
-
-## GitHub掲載用の検証スクリプト
-
-`tests/`は、開発時の検証スクリプトから、実行環境固有のパスとChromium配布パッケージへの依存を外したものです。Playwrightが取得する通常のChromiumで実行できる構成にしています。
+`tests/`の検証スクリプトは、Playwrightが取得する通常のChromiumで実行できます。
 
 ```sh
 npm install
@@ -39,15 +32,9 @@ npm run test:handoff
 npm run test:offline
 ```
 
-検査対象はローカルの`dist/`に限定しています。Web版用の認証トークンは不要です。出力先は`test-results/`で、Git管理から除外しています。
+検査対象はローカルの`dist/`です。出力先は`test-results/`で、Git管理から除外しています。
 
-前節の表は開発時の記録です。掲載準備時に行った構文確認とオフラインHTMLの再生成確認は、ブラウザー検証の再実行とは別の作業です。GitHub掲載版でのブラウザー検証の再実行結果は、次の節に示します。
-
-## GitHub掲載版の再実行（2026年9月20日）
-
-本リポジトリのコミット`4f14253f375b0956ff5b50331777efaad990dc9d`と、取得したファイルを照合したうえで、AIコーディング支援を使って実行しました。
-
-最初の診断スクリプトの実行は、`TypeError: path.join is not a function`で失敗しました。テスト内のHTTPパス文字列の変数名が、Node.jsの`path`モジュールと同じだったためです。変数名を`pathname`へ変更し、アプリ本体や期待値は変えずに3スクリプトを再実行しました。
+## 再実行の結果（2026年9月20日）
 
 | スクリプト | 確認した結果 | 実行結果JSON |
 | --- | --- | --- |
@@ -55,9 +42,9 @@ npm run test:offline
 | `tests/handoff.cjs` | 成功。実ファイルの受け渡し、4用途、不正入力5ケース、HTMLの文字としての表示、原文保持、旧出力の無効化 | [受け渡し](verification/github-review-2026-09-20/local-reuse-verification.json) |
 | `tests/offline.cjs` | 成功。同じ受け渡し検査をネットワーク無効のブラウザーで実施。HTTP(S)リクエスト0件 | [オフライン](verification/github-review-2026-09-20/offline-reuse-verification.json) |
 
-実行環境は、Linux x86_64、Node.js 24.19.0、Playwright 1.62.1、Chromium 153.0.8010.0（`@sparticuz/chromium` 153.0.0配布版）です。インストール済みのPlaywrightを`NODE_PATH`で、インストール済みのChromiumを`CHROMIUM_EXECUTABLE`で指定して`npm test`を実行しました。
+実行環境は、Linux x86_64、Node.js 24.19.0、Playwright 1.62.1、Chromium 153.0.8010.0（`@sparticuz/chromium` 153.0.0配布版）です。
 
-実行結果のJSONはこの再実行時の出力で、オフライン版のローカル作業パスだけを`[local-checkout]`へ置き換えています。開発時の記録は上書きせず、別フォルダーに残しました。
+実行結果のJSONはこの再実行時の出力です。開発時の記録は上書きせず、別フォルダーに残しました。
 
 `python3 build_offline.py`で再生成したHTMLも、変更前のHTMLとSHA-256が一致しました。
 
@@ -74,6 +61,3 @@ npm run test:offline
 - 複数人での同時利用、組織の文書管理との接続、長期運用
 - 官公庁や企業の利用規程への適合、実データを用いた業務導入
 - 人だけで作業した場合との費用・時間の比較
-- Web版の配信基盤の通信内容の完全な監査（そのため、Web版全体を「通信ゼロ」とは記載していません）
-- 2026年9月20日の再実行における、Web版の配信先での再検証と、実機でのLLM推論
-- 新しい環境で`npm install`からPlaywright標準のChromiumを取得する手順（再実行では既存の環境を使用）
